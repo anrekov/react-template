@@ -3,10 +3,6 @@
     "browser": true,
     "es2021": true
   },
-  // "extends": [
-  //     "standard-with-typescript",
-  //     "plugin:react/recommended"
-  // ],
   "extends": [
     "eslint:recommended",
     "react-app",
@@ -36,7 +32,7 @@
         "@typescript-eslint/no-namespace": "error",
         "@typescript-eslint/no-non-null-assertion": "error",
         "no-unused-vars": "off",
-        "@typescript-eslint/no-unused-vars": "error",
+        "@typescript-eslint/no-unused-vars": "warn",
         "no-use-before-define": "off",
         "@typescript-eslint/no-use-before-define": "error",
         "no-redeclare": "off",
@@ -122,6 +118,7 @@
     "no-debugger": "error",
 
     "no-var": "error",
-    "prefer-const": "warn"
+    "prefer-const": "warn",
+    "arrow-body-style": ["error", "as-needed"]
   }
 }
