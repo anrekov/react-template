@@ -1,9 +1,17 @@
 import { USER_STORAGE_KEY } from 'consts';
 import { NavLink } from 'react-router-dom';
 
-const paintActiveLink = ({ isActive }) => ({ color: isActive ? 'orange' : 'black' });
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import HomeIcon from '@mui/icons-material/Home';
+import InfoIcon from '@mui/icons-material/Info';
+import { Button, Box, Typography, useTheme } from '@mui/material';
+import { blue } from '@mui/material/colors';
+
+import { LinksWrapper } from './styled';
 
 export const Header = () => {
+  const theme = useTheme();
+
   // Здесь можно реализовать динамический путь и логин
   const userId = localStorage.getItem(USER_STORAGE_KEY);
 
@@ -16,33 +24,41 @@ export const Header = () => {
   };
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        padding: '12px',
-        backgroundColor: 'lightcyan'
-      }}
+    <Box
+      display="flex"
+      alignItems="center"
+      justifyContent="space-between"
+      padding={1.5}
+      sx={{ backgroundColor: theme.palette.link.background ?? blue[100] }}
     >
-      <div style={{ display: 'flex', gap: '12px' }}>
-        <NavLink to="/" style={paintActiveLink}>
-          Main
+      <LinksWrapper display="flex" gap={3}>
+        <NavLink to="/">
+          <Box display="flex" alignItems="center" gap={1}>
+            <HomeIcon />
+            <Typography>Main</Typography>
+          </Box>
         </NavLink>
 
-        <NavLink to="/about" style={paintActiveLink}>
-          About
+        <NavLink to="/about">
+          <Box display="flex" alignItems="center" gap={1}>
+            <InfoIcon />
+            <Typography>About</Typography>
+          </Box>
         </NavLink>
 
-        <NavLink to={`/users/${userId}`} style={paintActiveLink}>
-          Profile
+        <NavLink to={`/users/${userId}`}>
+          <Box display="flex" alignItems="center" gap={1}>
+            <AccountBoxIcon />
+            <Typography>Profile</Typography>
+          </Box>
         </NavLink>
-      </div>
+      </LinksWrapper>
 
       {userId ? (
-        <button onClick={handleLogout}>Log out</button>
+        <Button onClick={handleLogout}>Log out</Button>
       ) : (
-        <button onClick={handleLogin}>Log in</button>
+        <Button onClick={handleLogin}>Log in</Button>
       )}
-    </div>
+    </Box>
   );
 };

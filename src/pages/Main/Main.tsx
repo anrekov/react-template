@@ -1,3 +1,5 @@
 import type { FC } from 'react';
 
-export const Main: FC = () => <div>Main</div>;
+import Typography from '@mui/material/Typography';
+
+export const Main: FC = () => <Typography>Main</Typography>;
