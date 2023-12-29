@@ -1,8 +1,12 @@
-import React from 'react';
+import type { FC } from 'react';
+
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+const App: FC = () => {
+  const qwe = 123;
+  console.log('first', qwe);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -21,6 +25,7 @@ function App() {
       </header>
     </div>
   );
-}
+};
 
 export default App;
+// "packageManager": "yarn@3.2.2",
