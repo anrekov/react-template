@@ -20,6 +20,6 @@
     "noFallthroughCasesInSwitch": true,
     "downlevelIteration": true
   },
-  "include": ["src", "./types/*"],
+  "include": ["src", "type-definitions/*", "type-definitions"],
   "exclude": ["./src/**/*.test.*", "./src/**/__test__/*"]
 }

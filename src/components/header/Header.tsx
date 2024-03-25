@@ -1,4 +1,3 @@
-import { USER_STORAGE_KEY } from 'consts';
 import { NavLink } from 'react-router-dom';
 
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
@@ -6,6 +5,8 @@ import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
 import { Button, Box, Typography, useTheme } from '@mui/material';
 import { blue } from '@mui/material/colors';
+
+import { USER_STORAGE_KEY } from 'contants/common';
 
 import { LinksWrapper } from './styled';
 
