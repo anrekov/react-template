@@ -1,7 +1,7 @@
 import { About, Main, Profile } from 'pages';
 import { createBrowserRouter } from 'react-router-dom';
 
-import { Layout } from 'components/layout';
+import { Layout } from 'components/templates/layout/Layout';
 
 import { protecedRouteLoader } from './protecedRouteLoader';
 
