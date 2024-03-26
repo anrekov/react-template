@@ -1,1 +1,1 @@
-export type userQueryParams = { userId?: string };
+export type TuserQueryParams = { userId?: string };

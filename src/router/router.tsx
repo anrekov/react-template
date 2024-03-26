@@ -1,9 +1,13 @@
-import { About, Main, Profile } from 'pages';
+import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 
 import { Layout } from 'components/templates/layout/Layout';
 
 import { protecedRouteLoader } from './protecedRouteLoader';
+
+const Main = React.lazy(() => import('components/templates/Main/Main'));
+const About = React.lazy(() => import('components/templates/About/About'));
+const Profile = React.lazy(() => import('components/templates/Profile/Profile'));
 
 export const router = createBrowserRouter([
   {
@@ -13,7 +17,13 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Main />
+        element: (
+          <React.Suspense // Custom fallback
+            fallback={<h2 style={{ padding: '20px', backgroundColor: 'blue' }}>Loading...</h2>}
+          >
+            <Main />
+          </React.Suspense>
+        )
       },
       {
         path: '/about',

@@ -3,13 +3,13 @@ import { FC } from 'react';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
-import { Button, Box, useTheme } from '@mui/material';
+import { Button, useTheme } from '@mui/material';
 import { blue } from '@mui/material/colors';
 
 import { HeaderNavLink } from 'components/atoms/headerNavLink';
 import { USER_STORAGE_KEY } from 'contants/common';
 
-import { LinksWrapper } from './styled';
+import { LinksWrapper, Wrapper } from './styled';
 
 export const Header: FC = () => {
   const theme = useTheme();
@@ -32,7 +32,7 @@ export const Header: FC = () => {
   };
 
   return (
-    <Box
+    <Wrapper
       display="flex"
       alignItems="center"
       justifyContent="space-between"
@@ -50,6 +50,6 @@ export const Header: FC = () => {
       ) : (
         <Button onClick={handleLogin}>Log in</Button>
       )}
-    </Box>
+    </Wrapper>
   );
 };
