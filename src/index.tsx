@@ -1,6 +1,8 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import { RouterProvider } from 'react-router-dom';
 import { router } from 'router';
+import { store } from 'store';
 import { theme } from 'theme';
 
 import { ThemeProvider } from '@mui/material/styles';
@@ -14,7 +16,9 @@ root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <RouterProvider router={router} />
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
     </ThemeProvider>
   </React.StrictMode>
 );
