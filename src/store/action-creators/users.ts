@@ -9,9 +9,9 @@ export const loadUsers =
     try {
       dispatch(getUsersStart());
 
-      const { data } = await getUsers();
+      const users = await getUsers();
 
-      dispatch(getUsersSuccess({ users: data }));
+      dispatch(getUsersSuccess({ users }));
     } catch (error) {
       console.error(error);
     }

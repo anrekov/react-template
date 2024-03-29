@@ -27,19 +27,19 @@ export type TUser = {
   };
 };
 
-interface getUsersStart {
+type TgetUsersStart = {
   type: UsersActionsTypes.GET_USERS_START;
-}
+};
 
-interface getUsersSuccess {
+type TgetUsersSuccess = {
   type: UsersActionsTypes.GET_USERS_SUCCESS;
   payload: {
     users: TUser[];
   };
-}
+};
 
-export type UsersActions = getUsersStart | getUsersSuccess;
+export type UsersActions = TgetUsersStart | TgetUsersSuccess;
 
-export interface IUsersState {
+export type TUsersState = {
   users: TUser[];
-}
+};
