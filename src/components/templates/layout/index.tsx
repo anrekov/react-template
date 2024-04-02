@@ -9,7 +9,7 @@ export const Layout: FC = () => (
   <>
     <Header />
 
-    <div style={{ padding: '16px' }}>
+    <div data-testid="layout" style={{ padding: '16px' }}>
       <React.Suspense // Common fallback
         fallback={<Skeleton height="calc(100vh - 92px)" variant="rounded" />}
       >

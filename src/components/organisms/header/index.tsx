@@ -33,6 +33,7 @@ export const Header: FC = () => {
 
   return (
     <Wrapper
+      data-testid="app-header"
       display="flex"
       alignItems="center"
       justifyContent="space-between"

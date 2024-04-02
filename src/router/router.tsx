@@ -1,13 +1,13 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 
-import { Layout } from 'components/templates/layout/Layout';
+import { Layout } from 'components/templates/layout';
 
 import { protecedRouteLoader } from './protecedRouteLoader';
 
-const Main = React.lazy(() => import('components/templates/Main/Main'));
-const About = React.lazy(() => import('components/templates/About/About'));
-const Profile = React.lazy(() => import('components/templates/Profile/Profile'));
+const Main = React.lazy(() => import('components/templates/main'));
+const About = React.lazy(() => import('components/templates/about'));
+const Profile = React.lazy(() => import('components/templates/profile'));
 
 export const router = createBrowserRouter([
   {

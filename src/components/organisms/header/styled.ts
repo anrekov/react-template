@@ -8,8 +8,8 @@ export const Wrapper = styled(Box)(({ theme }) => ({
 
 export const LinksWrapper = styled(Box)(({ theme }) => ({
   'a': {
-    'text-decoration': 'none',
-    'color': theme.palette.link.main
+    textDecoration: 'none',
+    color: theme.palette.link.main
   },
   'a.active': {
     color: theme.palette.link.active

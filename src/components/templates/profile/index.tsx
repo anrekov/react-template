@@ -16,15 +16,15 @@ export const Profile: FC = () => {
   }, [loadUsers]);
 
   return (
-    <Typography>
+    <Box data-testid="profile-page">
       <Typography variant="h4">Profile of "{userId}"</Typography>
 
       {users.map((user) => (
-        <Box key={user.id}>
+        <Typography key={user.id}>
           {user.id} {user.name}
-        </Box>
+        </Typography>
       ))}
-    </Typography>
+    </Box>
   );
 };
 

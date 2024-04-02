@@ -6,6 +6,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "coverage": "react-scripts test --coverage --watchAll",
     "eject": "react-scripts eject",
     "prettier": "prettier \"src/**/*.{js,jsx,ts,tsx}\" -c",
     "lint-fix": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix",
@@ -48,6 +49,7 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^18.4.3",
     "@types/react-redux": "^7.1.33",
@@ -77,5 +79,6 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  }
+  },
+  "jest": { "transformIgnorePatterns": [ "node_modules/(?!axios)" ] }
 }

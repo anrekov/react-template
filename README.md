@@ -18,3 +18,8 @@ Start a message with **feat/fix/...**, you can also add the task number or some 
 It will run on commit or you can use scripts:
 - `yarn prettier`
 - `yarn lint-fix` 
+
+## 3. Tests
+You can run them or see coverage (keep it over 80%) with scripts:
+- `yarn test`
+- `yarn coverage`
