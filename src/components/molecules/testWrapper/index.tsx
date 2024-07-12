@@ -1,19 +1,31 @@
 import React, { FC } from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import { store } from 'store';
+import { applyMiddleware, createStore } from 'redux';
+import { thunk } from 'redux-thunk';
+import { RootState } from 'store';
 import { theme } from 'theme';
 
 import { ThemeProvider } from '@mui/material/styles';
 
+import rootReducer from 'store/reducers/rootReducer';
+
 type Props = {
   children: React.ReactNode;
+  preloadedState?: Partial<RootState>;
 };
 
-export const TestWrapper: FC<Props> = ({ children }) => (
-  <ThemeProvider theme={theme}>
-    <Provider store={store}>
-      <BrowserRouter>{children}</BrowserRouter>
-    </Provider>
-  </ThemeProvider>
-);
+const getStore = (preloadedState) =>
+  createStore(rootReducer, preloadedState, applyMiddleware(thunk));
+
+export const TestWrapper: FC<Props> = ({ children, preloadedState }) => {
+  const store = getStore(preloadedState);
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Provider store={store}>
+        <BrowserRouter>{children}</BrowserRouter>
+      </Provider>
+    </ThemeProvider>
+  );
+};

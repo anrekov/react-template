@@ -1,4 +1,5 @@
-import { FC } from 'react';
+import { USER_STORAGE_KEY } from 'consts';
+import { FC, useMemo } from 'react';
 
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import HomeIcon from '@mui/icons-material/Home';
@@ -6,8 +7,7 @@ import InfoIcon from '@mui/icons-material/Info';
 import { Button, useTheme } from '@mui/material';
 import { blue } from '@mui/material/colors';
 
-import { HeaderNavLink } from 'components/atoms/headerNavLink';
-import { USER_STORAGE_KEY } from 'contants/common';
+import { HeaderNavLink } from 'components/atoms/HeaderNavLink';
 
 import { LinksWrapper, Wrapper } from './styled';
 
@@ -17,11 +17,14 @@ export const Header: FC = () => {
   // Здесь можно реализовать динамический путь и логин
   const userId = localStorage.getItem(USER_STORAGE_KEY);
 
-  const headerItems = [
-    { icon: <HomeIcon />, link: '/', text: 'Main' },
-    { icon: <InfoIcon />, link: '/about', text: 'About' },
-    { icon: <AccountBoxIcon />, link: `/users/${userId}`, text: 'Profile' }
-  ];
+  const headerItems = useMemo(
+    () => [
+      { icon: <HomeIcon />, link: '/', text: 'Main' },
+      { icon: <InfoIcon />, link: '/about', text: 'About' },
+      { icon: <AccountBoxIcon />, link: `/users/${userId}`, text: 'Profile' }
+    ],
+    [userId]
+  );
 
   const handleLogin = () => {
     localStorage.setItem(USER_STORAGE_KEY, 'user');

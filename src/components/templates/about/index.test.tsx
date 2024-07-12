@@ -2,7 +2,7 @@ import React from 'react';
 
 import { render } from '@testing-library/react';
 
-import { TestWrapper } from '../../molecules/testWrapper';
+import { TestWrapper } from '../../molecules/TestWrapper';
 
 import { About } from './index';
 

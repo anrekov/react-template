@@ -1,19 +1,19 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 
-import { Layout } from 'components/templates/layout';
+import { Layout } from 'components/templates/Layout';
 
-import { protecedRouteLoader } from './protecedRouteLoader';
+import { protectedRouteLoader } from './protectedRouteLoader';
 
-const Main = React.lazy(() => import('components/templates/main'));
-const About = React.lazy(() => import('components/templates/about'));
-const Profile = React.lazy(() => import('components/templates/profile'));
+const Main = React.lazy(() => import('components/templates/Main'));
+const About = React.lazy(() => import('components/templates/About'));
+const Profile = React.lazy(() => import('components/templates/Profile'));
 
 export const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
-    errorElement: <div>Oops! There was an error.</div>,
+    errorElement: <p>Default router v6 error boundary text</p>,
     children: [
       {
         index: true,
@@ -31,7 +31,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/users/:userId',
-        loader: protecedRouteLoader,
+        loader: protectedRouteLoader,
         element: <Profile />
       }
     ]

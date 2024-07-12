@@ -1,3 +1,4 @@
+import { GlobalStyles } from 'globalStyles';
 import React from 'react';
 import { Provider } from 'react-redux';
 import { RouterProvider } from 'react-router-dom';
@@ -7,7 +8,6 @@ import { theme } from 'theme';
 
 import { ThemeProvider } from '@mui/material/styles';
 
-import { GlobalStyles } from 'components/atoms/globalStyles';
 import ReactDOM from 'react-dom/client';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);

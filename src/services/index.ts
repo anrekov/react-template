@@ -1,6 +1,5 @@
 import axios, { AxiosError, AxiosInstance, AxiosRequestConfig } from 'axios';
-
-import { API_URL } from 'contants/config';
+import { API_URL } from 'consts';
 
 // Должна быть singleton, поэтому экспортируем только инстанс класса
 class Api {

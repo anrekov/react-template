@@ -1,7 +1,8 @@
 import { UsersActions, UsersActionsTypes, TUsersState } from '../types/users';
 
 const initialState: TUsersState = {
-  users: []
+  byId: {},
+  allIds: []
 };
 
 export const usersReducer = (state = initialState, action: UsersActions): TUsersState => {
@@ -9,12 +10,17 @@ export const usersReducer = (state = initialState, action: UsersActions): TUsers
     case UsersActionsTypes.GET_USERS_START:
       return {
         ...state,
-        users: []
+        byId: {}
       };
     case UsersActionsTypes.GET_USERS_SUCCESS:
       return {
         ...state,
-        users: action.payload.users
+        byId: action.payload.users.reduce((acc, user) => {
+          acc[user.id] = user;
+
+          return acc;
+        }, {}),
+        allIds: action.payload.users.map(({ id }) => id.toString())
       };
 
     default:

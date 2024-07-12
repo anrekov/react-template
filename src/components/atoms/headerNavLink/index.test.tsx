@@ -3,7 +3,7 @@ import React from 'react';
 import InfoIcon from '@mui/icons-material/Info';
 import { render } from '@testing-library/react';
 
-import { TestWrapper } from '../../molecules/testWrapper';
+import { TestWrapper } from '../../molecules/TestWrapper';
 
 import { HeaderNavLink } from './index';
 

@@ -1,20 +1,27 @@
 import React, { type FC } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 
 import { Skeleton } from '@mui/material';
 
-import { Header } from 'components/organisms/header';
+import { ErrorBoundary } from 'components/molecules/ErrorBoundary';
+import { Header } from 'components/organisms/Header';
 
-export const Layout: FC = () => (
-  <>
-    <Header />
+export const Layout: FC = () => {
+  const location = useLocation();
 
-    <div data-testid="layout" style={{ padding: '16px' }}>
-      <React.Suspense // Common fallback
-        fallback={<Skeleton height="calc(100vh - 92px)" variant="rounded" />}
-      >
-        <Outlet />
-      </React.Suspense>
-    </div>
-  </>
-);
+  return (
+    <>
+      <Header />
+
+      <div data-testid="layout" style={{ padding: '16px' }}>
+        <React.Suspense // Common fallback
+          fallback={<Skeleton height="calc(100vh - 92px)" variant="rounded" />}
+        >
+          <ErrorBoundary key={location.pathname}>
+            <Outlet />
+          </ErrorBoundary>
+        </React.Suspense>
+      </div>
+    </>
+  );
+};

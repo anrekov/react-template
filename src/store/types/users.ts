@@ -31,15 +31,18 @@ type TgetUsersStart = {
   type: UsersActionsTypes.GET_USERS_START;
 };
 
+export type TUsersPayload = {
+  users: TUser[];
+};
+
 type TgetUsersSuccess = {
   type: UsersActionsTypes.GET_USERS_SUCCESS;
-  payload: {
-    users: TUser[];
-  };
+  payload: TUsersPayload;
 };
 
 export type UsersActions = TgetUsersStart | TgetUsersSuccess;
 
 export type TUsersState = {
-  users: TUser[];
+  byId: Record<string, TUser>;
+  allIds: string[];
 };
