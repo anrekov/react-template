@@ -1,8 +1,7 @@
 import { FC } from 'react';
 
-import { Typography } from '@mui/material';
-
 import { useAppSelector } from 'shared/hooks';
+import { UserInfo } from 'widgets/UserInfo';
 
 type TProps = {
   id: string | number;
@@ -11,9 +10,5 @@ type TProps = {
 export const UserItem: FC<TProps> = ({ id }) => {
   const user = useAppSelector((state) => state.users.byId[id]);
 
-  return (
-    <Typography>
-      {user?.id} {user?.name}
-    </Typography>
-  );
+  return <UserInfo user={user} />;
 };

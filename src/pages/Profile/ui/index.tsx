@@ -21,9 +21,11 @@ export const Profile: FC = () => {
     <Box data-testid="profile-page">
       <Typography variant="h4">Profile of "{userId}"</Typography>
 
-      {userIds.map((id) => (
-        <UserItem key={id} id={id} />
-      ))}
+      <Box display="flex" flexDirection="column" gap={2}>
+        {userIds.map((id) => (
+          <UserItem key={id} id={id} />
+        ))}
+      </Box>
     </Box>
   );
 };
