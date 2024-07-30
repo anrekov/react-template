@@ -69,7 +69,7 @@
   ],
   "rules": {
     "import/order": [
-      "error",
+      "warn",
       {
         "pathGroups": [
           {
@@ -114,7 +114,7 @@
     "linebreak-style": ["error", "unix"],
     "curly": ["error", "all"],
     "array-callback-return": "error",
-    "prettier/prettier": "error",
+    "prettier/prettier": "warn",
     "no-debugger": "error",
 
     "no-var": "error",

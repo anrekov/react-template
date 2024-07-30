@@ -2,7 +2,7 @@ import React from 'react';
 
 import { render } from '@testing-library/react';
 
-import { TestWrapper } from '../../../shared/ui/TestWrapper';
+import { TestWrapper } from '../../../../shared/ui/TestWrapper';
 
 import { UserItem } from './index';
 

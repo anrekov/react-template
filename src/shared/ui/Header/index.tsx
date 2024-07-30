@@ -1,4 +1,3 @@
-import { USER_STORAGE_KEY } from 'consts';
 import { FC, useMemo } from 'react';
 
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
@@ -7,6 +6,7 @@ import InfoIcon from '@mui/icons-material/Info';
 import { Button, useTheme } from '@mui/material';
 import { blue } from '@mui/material/colors';
 
+import { USER_STORAGE_KEY } from 'shared/consts';
 import { HeaderNavLink } from 'shared/ui/HeaderNavLink';
 
 import { LinksWrapper, Wrapper } from './styled';

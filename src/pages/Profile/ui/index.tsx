@@ -1,10 +1,10 @@
-import { useActions, useAppSelector } from 'hooks';
 import { useEffect, type FC } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { Box, Typography } from '@mui/material';
 
 import { UserItem } from 'entities/user';
+import { useActions, useAppSelector } from 'shared/hooks';
 
 import { TuserQueryParams } from '../model';
 

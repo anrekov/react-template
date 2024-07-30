@@ -1,7 +1,8 @@
-import { useAppSelector } from 'hooks';
 import { FC } from 'react';
 
 import { Typography } from '@mui/material';
+
+import { useAppSelector } from 'shared/hooks';
 
 type TProps = {
   id: string | number;

@@ -1,5 +1,6 @@
-import { USER_STORAGE_KEY } from 'consts';
 import { redirect } from 'react-router-dom';
+
+import { USER_STORAGE_KEY } from 'shared/consts';
 
 export const protectedRouteLoader = () => {
   // Здесь можно реализовать проверку на аутентификацию
